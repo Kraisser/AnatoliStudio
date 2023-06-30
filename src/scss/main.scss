@@ -1,0 +1,51 @@
+@import './common/variables.scss';
+@import './common/mixins.scss';
+
+.welcome-page {
+	background-color: $bg-color;
+}
+.welcome-wrapper {
+	@include grid(grid-template-columns, min-content);
+}
+.welcome-content {
+	padding-top: 326px;
+}
+.studio-name-header {
+	@include brandGradientText();
+	@include font(116px, 0.9, 700);
+	text-transform: uppercase;
+	margin: 0 0 22px;
+	padding-top: 5px;
+}
+.welcome-description {
+	@include font(24px, 0.9, 300);
+	margin-bottom: 69px;
+}
+
+// products-info
+.products-info {
+	padding-top: 110px;
+	height: 1281px;
+	background: no-repeat url('../assets/background/line-pattern.svg') center,
+		no-repeat url('../assets/background/shape-pattern.svg') center;
+}
+.production-steps {
+	margin-bottom: 130px;
+}
+.steps-wrapper {
+	@include grid(grid-template-columns, repeat(3, minmax(min-content, 336px)));
+	justify-content: space-between;
+	color: $defaut-text-color;
+}
+.product-steps-header {
+	margin-bottom: 55px;
+}
+.product-step {
+	h3 {
+		margin: 0 0 20px;
+		@include font(34px, 0.9, 400);
+	}
+	.step-info {
+		@include font(22px, 1.1, 300);
+	}
+}

@@ -1,0 +1,25 @@
+@import './variables.scss';
+
+@mixin font($size, $line-height: normal, $font-weight: normal, $color: #fff) {
+	font-size: $size;
+	line-height: $line-height;
+	font-weight: $font-weight;
+	color: $color;
+}
+
+@mixin grid($grid-template, $grids, $gaps: 0) {
+	display: grid;
+	#{$grid-template}: #{$grids};
+	grid-gap: $gaps;
+}
+
+@mixin gridPosition($align-items, $justify-content: stretch) {
+	align-items: $align-items;
+	justify-content: $justify-content;
+}
+
+@mixin brandGradientText() {
+	background: $brand-gradient;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}

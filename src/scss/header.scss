@@ -1,0 +1,50 @@
+@import './common/variables.scss';
+@import './common/mixins.scss';
+
+header {
+	margin: 0 auto;
+	position: fixed;
+	top: 0;
+	left: 50%;
+	margin-right: -50%;
+	transform: translateX(-50%);
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.03);
+	backdrop-filter: blur(50px);
+	border-bottom: solid 1px;
+	border-image: linear-gradient(
+		90deg,
+		rgba(255, 255, 255, 0) 0%,
+		rgba(255, 255, 255, 0.2) 50%,
+		rgba(255, 255, 255, 0) 100%
+	);
+	border-image-slice: 1;
+}
+.header-content {
+	height: 50px;
+	@include grid(grid-template-columns, min-content min-content);
+	@include gridPosition(center, space-between);
+	max-width: 1208px;
+	margin: 0 auto;
+}
+
+// Nav
+.main-menu {
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		@include grid(grid-template-columns, repeat(4, min-content), 23px);
+	}
+}
+.menu-item {
+	color: $secondary-text-color;
+	transition: color 0.3s ease;
+	text-decoration: none;
+	&:hover {
+		color: $main-text-color;
+	}
+	&.active {
+		color: $main-text-color;
+	}
+}
