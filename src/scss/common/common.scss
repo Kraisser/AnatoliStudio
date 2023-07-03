@@ -30,7 +30,6 @@ body {
 	z-index: 1;
 
 	span {
-		// transition: color 0.4s ease;
 		color: $but-hover-text-color;
 		@include brandGradientText();
 	}
@@ -60,7 +59,6 @@ body {
 	&:hover {
 		border-image: none;
 		span {
-			// color: $but-hover-text-color;
 			background: none;
 			background-clip: border-box;
 			-webkit-text-fill-color: initial;
