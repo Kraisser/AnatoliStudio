@@ -10,28 +10,54 @@
 	<body>
 		<header>
 			<div class="header-content">
-				<a href="/#">
-					<img src="./assets/icons/main-logo.png" alt="logo" />
-				</a>
+				<div class="logo-wrapper">
+					<a href="#home">
+						<img src="./assets/icons/main-logo.png" alt="logo" />
+					</a>
+				</div>
 				<nav class="main-menu">
 					<ul>
-						<li><a href="" class="menu-item active">home</a></li>
-						<li><a href="" class="menu-item">cases</a></li>
-						<li><a href="" class="menu-item">prices</a></li>
-						<li><a href="" class="menu-item">contacts</a></li>
+						<li><a href="#home" class="menu-item">home</a></li>
+						<li><a href="#cases" class="menu-item">cases</a></li>
+						<li><a href="#prices" class="menu-item">prices</a></li>
+						<li><a href="#contacts" class="menu-item">contacts</a></li>
 					</ul>
 				</nav>
 			</div>
 		</header>
 		<main>
-			<section class="welcome-page">
+			<section class="welcome-page" id="home">
 				<div class="max-content-width welcome-wrapper">
 					<div class="welcome-content">
 						<h1 class="studio-name-header">creative anatoli studio</h1>
 						<div class="welcome-description">Marketing videos for the purchase of traffic</div>
-						<button class="contact-button"><span>contact us</span></button>
+						<a href="#contacts"
+							><button class="contact-button"><span>contact us</span></button></a
+						>
 					</div>
 				</div>
+				<svg
+					class="background-anim-svg"
+					width="500"
+					height="500"
+					viewBox="0 0 500 500"
+					s
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						fill-rule="evenodd"
+						clip-rule="evenodd"
+						d="M256.358 42.5953C309.923 32.4352 363.331 72.4201 395.145 116.676C423.354 155.918 412.401 207.175 409.333 255.399C406.563 298.957 404.7 342.583 378.552 377.537C347.97 418.419 307.363 462.458 256.358 459.893C206.131 457.368 178.024 404.488 145.869 365.838C118.049 332.4 82.8458 298.757 86.2261 255.399C89.4848 213.602 135.66 193.68 161.844 160.929C194.615 119.939 204.785 52.3777 256.358 42.5953Z"
+						fill="#F4CA36"
+					/>
+					<path
+						fill-rule="evenodd"
+						clip-rule="evenodd"
+						d="M374.294 54.2895C417.284 53.3553 466.788 41.0304 497.222 71.0525C527.665 101.083 506.148 150.828 514.44 192.539C526.999 255.713 588.377 316.83 557.334 373.432C524.638 433.049 441.75 460.479 374.294 448.073C311.982 436.613 290.635 363.629 248.689 316.67C211.489 275.024 144.197 248.061 146.037 192.539C147.868 137.269 208.946 105.176 256.655 76.28C292.028 54.8556 332.816 55.1908 374.294 54.2895Z"
+						fill="#F436E1"
+					/>
+				</svg>
 			</section>
 			<section class="products-info">
 				<div class="max-content-width">
@@ -59,7 +85,7 @@
 					</div>
 				</div>
 
-				<div class="cases-wrapper">
+				<div class="cases-wrapper" id="cases">
 					<h2 class="section-header max-content-width cases-header">Cases</h2>
 					<div class="cases-slider swiper">
 						<div class="swiper-wrapper cases-slide-wrapper">
@@ -161,7 +187,7 @@
 				</div>
 			</section>
 
-			<section class="prices">
+			<section class="prices" id="prices">
 				<div class="max-content-width">
 					<h2 class="section-header">Prices</h2>
 					<div class="prices-description">
@@ -182,7 +208,9 @@
 								<li class="service-item">art director + lead motion designer</li>
 								<li class="service-item">personal manager</li>
 							</ul>
-							<button class="contact-button"><span>contact us</span></button>
+							<a href="#contacts"
+								><button class="contact-button"><span>contact us</span></button></a
+							>
 						</div>
 
 						<div class="price-card">
@@ -199,7 +227,9 @@
 								<li class="service-item">art director + lead motion designer</li>
 								<li class="service-item">personal manager</li>
 							</ul>
-							<button class="contact-button"><span>contact us</span></button>
+							<a href="#contacts"
+								><button class="contact-button"><span>contact us</span></button></a
+							>
 						</div>
 
 						<div class="price-card">
@@ -216,13 +246,15 @@
 								<li class="service-item">art director + lead motion designer</li>
 								<li class="service-item">personal manager</li>
 							</ul>
-							<button class="contact-button"><span>contact us</span></button>
+							<a href="#contacts"
+								><button class="contact-button"><span>contact us</span></button></a
+							>
 						</div>
 					</div>
 				</div>
 			</section>
 
-			<section class="contacts">
+			<section class="contacts" id="contacts">
 				<div class="max-content-width contact-wrapper">
 					<div class="contact-info">
 						<h2 class="section-header">Contacts</h2>

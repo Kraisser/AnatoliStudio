@@ -2,7 +2,17 @@
 @import './common/mixins.scss';
 
 .welcome-page {
+	position: relative;
 	background-color: $bg-color;
+	overflow: hidden;
+
+	.background-anim-svg {
+		position: absolute;
+		filter: blur(100px);
+		overflow: visible;
+		top: 15%;
+		right: 15%;
+	}
 }
 .welcome-wrapper {
 	@include grid(grid-template-columns, min-content);

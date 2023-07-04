@@ -10,7 +10,10 @@ import Swiper, {Navigation, Pagination} from 'swiper';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 
-// import anime from 'animejs/lib/anime.es.js';
+import './svg-anim/svg-animation';
+import smoothScroll from './modules/smooth-scroll';
+import activeLinksController from './modules/active-links-controller';
+import navScroll from './modules/nav-scroll';
 
 const casesSlider = new Swiper('.cases-slider', {
 	slideClass: 'cases-slide-item',
@@ -29,3 +32,17 @@ const casesSlider = new Swiper('.cases-slider', {
 	},
 	modules: [Navigation, Pagination],
 });
+
+const navSelectorList = [document.querySelector('.main-menu')];
+
+const activeLinksControl = activeLinksController(navSelectorList, 'active');
+
+const observedTargets = document.querySelectorAll('.main-menu a');
+
+observedTargets.forEach((item) => {
+	const id = item.getAttribute('href').slice(1);
+	navScroll(id, activeLinksControl);
+});
+
+const smoothLinks = document.querySelectorAll('a[href^="#"]');
+smoothScroll(smoothLinks, activeLinksControl);
