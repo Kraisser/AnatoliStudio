@@ -1,0 +1,15 @@
+@import './common/variables.scss';
+@import './common/mixins.scss';
+
+.footer-wrapper {
+	height: 60px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	@include font(18px, 1.1, 400, $defaut-text-color);
+}
+.footer-authors {
+	display: flex;
+	gap: 13px;
+	justify-self: center;
+}

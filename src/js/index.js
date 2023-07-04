@@ -4,11 +4,13 @@ import '../scss/common/common.scss';
 
 import '../scss/header.scss';
 import '../scss/main.scss';
+import '../scss/footer.scss';
 
 import Swiper, {Navigation, Pagination} from 'swiper';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
-// import 'swiper/scss/pagination';
+
+// import anime from 'animejs/lib/anime.es.js';
 
 const casesSlider = new Swiper('.cases-slider', {
 	slideClass: 'cases-slide-item',

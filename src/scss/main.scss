@@ -188,8 +188,15 @@
 		margin-bottom: 50px;
 	}
 }
+.prices-cards {
+	display: flex;
+	justify-content: space-between;
+}
 .price-card {
+	max-width: 332px;
 	padding: 35px 25px 25px;
+	background-color: $bg-color;
+	border-radius: 10px;
 
 	h4 {
 		@include font(32px, 1.32, 700, $defaut-text-color);
@@ -203,4 +210,118 @@
 .underline {
 	@include size(100px, 1px);
 	background-color: #d9d9d9;
+	margin-bottom: 16px;
+}
+.price-value-wrapper {
+	margin-bottom: 30px;
+}
+.price-value {
+	@include font(52px, 1.32, 700);
+	@include brandGradientText();
+}
+.price-value-description {
+	@include font(18px, 1.32, 400, $defaut-text-color);
+}
+.service-list {
+	list-style-type: none;
+	margin: 0 0 42px;
+	padding-left: 0;
+
+	.service-item {
+		position: relative;
+		@include font(18px, 1.32, 400, $defaut-text-color);
+		padding-left: 23px+16px;
+		margin-bottom: 20px;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+
+		&:before {
+			content: '';
+			position: absolute;
+			background: url('../assets/icons/price-card-dot.svg');
+			width: 23px;
+			height: 23px;
+			top: 50%;
+			margin-bottom: -50%;
+			transform: translateY(-50%);
+			left: 0;
+		}
+	}
+}
+
+// Contact
+.contacts {
+	padding: 69px 0 66px;
+	background-color: $bg-color;
+}
+.contact-wrapper {
+	@include grid(grid-template-columns, 332px 1fr, 10%);
+	justify-content: space-between;
+}
+.contact-info {
+	.section-header {
+		margin-bottom: 31px;
+	}
+	.contact-description {
+		@include font(22px, 1.1, 400, $defaut-text-color);
+	}
+}
+
+.contact-form {
+	display: grid;
+	grid-template-columns: [name-start email-start] 2fr [name-end email-end message-start] 3fr [message-end];
+	grid-gap: 21px 23px;
+	grid-template-rows: [name-start message-start] 60px [name-end email-start] 60px [email-end message-end];
+
+	.name-input-wrapper {
+		grid-area: name;
+	}
+	.email-input-wrapper {
+		grid-area: email;
+	}
+	.message-input-wrapper {
+		grid-area: message;
+	}
+}
+
+.input-wrapper {
+	position: relative;
+
+	span {
+		@include font(22px, 1.32, 400, $defaut-text-color);
+		position: absolute;
+		left: 16px;
+		top: 16px;
+		transition: all 0.3s ease;
+	}
+}
+.contact-input {
+	position: relative;
+	border: solid 1px #4a4a4a;
+	background-color: transparent;
+	transition: background-color 0.2s ease;
+	@include font(22px, 1.32, 400, $defaut-text-color);
+	@include size(100%, 100%);
+	padding: 24px 16px 7px;
+	resize: none;
+
+	&::placeholder {
+		color: transparent;
+		transition: color 0.3s ease-in;
+	}
+	&:focus-visible {
+		background-color: #212121;
+		outline: none;
+
+		&::placeholder {
+			color: $defaut-text-color;
+		}
+		& + span {
+			transform: translateY(-12px);
+			opacity: 0.57;
+			font-size: 14px;
+		}
+	}
 }
