@@ -6,7 +6,7 @@ export default function smoothScroll(allAnchorLinks, activeLinksController) {
 
 				const id = item.getAttribute('href').slice(1);
 
-				activeLinksController(id);
+				// activeLinksController(id);
 
 				document.querySelector(`#${id}`).scrollIntoView({
 					behavior: 'smooth',

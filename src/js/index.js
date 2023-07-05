@@ -5,6 +5,7 @@ import '../scss/common/common.scss';
 import '../scss/header.scss';
 import '../scss/main.scss';
 import '../scss/footer.scss';
+import '../scss/burger-menu.scss';
 
 import Swiper, {Navigation, Pagination} from 'swiper';
 import 'swiper/scss';
@@ -16,10 +17,19 @@ import './animation/svg-animation';
 import smoothScroll from './modules/smooth-scroll';
 import activeLinksController from './modules/active-links-controller';
 import navScroll from './modules/nav-scroll';
+import burger from './modules/burger-menu';
 
 const casesSlider = new Swiper('.cases-slider', {
-	slidesPerView: 3,
+	slidesPerView: 1,
 	spaceBetween: 30,
+	breakpoints: {
+		640: {
+			slidesPerView: 2,
+		},
+		768: {
+			slidesPerView: 3,
+		},
+	},
 	navigation: {
 		nextEl: '.cases-button-next',
 		prevEl: '.cases-button-prev',
@@ -34,7 +44,10 @@ const casesSlider = new Swiper('.cases-slider', {
 	modules: [Navigation, Pagination],
 });
 
-const navSelectorList = [document.querySelector('.main-menu')];
+const navSelectorList = [
+	document.querySelector('.main-menu'),
+	document.querySelector('.main-burger-menu'),
+];
 
 const activeLinksControl = activeLinksController(navSelectorList, 'active');
 
@@ -47,3 +60,9 @@ observedTargets.forEach((item) => {
 
 const smoothLinks = document.querySelectorAll('a[href^="#"]');
 smoothScroll(smoothLinks, activeLinksControl);
+
+// Burger
+const burgerBut = document.querySelector('.burger-icon');
+const burgerMenu = document.querySelector('.header-content');
+
+burger(burgerMenu, burgerBut);

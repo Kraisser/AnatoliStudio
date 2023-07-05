@@ -16,16 +16,28 @@
 					</a>
 				</div>
 				<nav class="main-menu">
-					<ul>
+					<ul class="menu-list">
 						<li><a href="#home" class="menu-item">home</a></li>
 						<li><a href="#cases" class="menu-item">cases</a></li>
 						<li><a href="#prices" class="menu-item">prices</a></li>
 						<li><a href="#contacts" class="menu-item">contacts</a></li>
 					</ul>
 				</nav>
+				<div class="burger-icon">
+					<span class="burger-icon-line"></span>
+					<span class="burger-icon-line"></span>
+				</div>
 			</div>
 		</header>
 		<main>
+			<nav class="main-burger-menu">
+				<ul class="menu-list">
+					<li><a href="#home" class="menu-item">home</a></li>
+					<li><a href="#cases" class="menu-item">cases</a></li>
+					<li><a href="#prices" class="menu-item">prices</a></li>
+					<li><a href="#contacts" class="menu-item">contacts</a></li>
+				</ul>
+			</nav>
 			<section class="welcome-page" id="home">
 				<div class="max-content-width welcome-wrapper">
 					<div class="welcome-content">
@@ -87,8 +99,8 @@
 					</div>
 				</div>
 
-				<div class="cases-wrapper" id="cases">
-					<h2 class="section-header max-content-width cases-header">Cases</h2>
+				<h2 class="section-header max-content-width cases-header" id="cases">Cases</h2>
+				<div class="cases-wrapper">
 					<div class="cases-slider swiper">
 						<div class="swiper-wrapper cases-slide-wrapper">
 							<div class="bg-gradient swiper-slide">
@@ -104,7 +116,7 @@
 							</div>
 
 							<div class="bg-gradient swiper-slide">
-								<div class="cases-slide-item swiper-slide">
+								<div class="cases-slide-item">
 									<img src="./assets/images/slider/world-above.jpg" alt="world-above" />
 									<div class="slide-item-content">
 										<div class="slide-item-text">World Above</div>
@@ -113,7 +125,7 @@
 							</div>
 
 							<div class="bg-gradient swiper-slide">
-								<div class="cases-slide-item swiper-slide">
+								<div class="cases-slide-item">
 									<img src="./assets/images/slider/MysteryManor.jpg" alt="MysteryManor" />
 									<div class="slide-item-content">
 										<div class="slide-item-text">Mystery Manor</div>
@@ -122,7 +134,7 @@
 							</div>
 
 							<div class="bg-gradient swiper-slide">
-								<div class="cases-slide-item swiper-slide">
+								<div class="cases-slide-item">
 									<img src="./assets/images/slider/merge-mayor.jpg" alt="merge-mayor" />
 									<div class="slide-item-content">
 										<div class="slide-item-text">Merge Mayor</div>
@@ -205,13 +217,15 @@
 					<div class="prices-description">
 						*The final price depends on the volume and complexity of the task
 					</div>
+				</div>
+				<div class="prices-wrapper max-content-width">
 					<div class="prices-cards">
-						<div class="price-card">
+						<div class="price-card favourite">
 							<h4>2D Video Ads</h4>
 							<div class="price-services">Idea generation → Video animation</div>
 							<div class="underline"></div>
 							<div class="price-value-wrapper">
-								<div class="price-value">4500$</div>
+								<div class="price-value"><span>4500$</span></div>
 								<div class="price-value-description">from 450$ per video</div>
 							</div>
 							<ul class="service-list">
@@ -232,7 +246,7 @@
 							<div class="price-services">Idea generation → Video animation → Postproduction</div>
 							<div class="underline"></div>
 							<div class="price-value-wrapper">
-								<div class="price-value">6000$</div>
+								<div class="price-value"><span>6000$</span></div>
 								<div class="price-value-description">from 1200$ per video</div>
 							</div>
 							<ul class="service-list">
@@ -253,7 +267,7 @@
 							<div class="price-services">Idea generation → Shooting → Postproduction</div>
 							<div class="underline"></div>
 							<div class="price-value-wrapper">
-								<div class="price-value">5500$</div>
+								<div class="price-value"><span>5500$</span></div>
 								<div class="price-value-description">from 550$ per video</div>
 							</div>
 							<ul class="service-list">

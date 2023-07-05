@@ -81,3 +81,20 @@ body {
 	@include font(54px, 0.9, 700, $defaut-text-color);
 	margin: 0;
 }
+
+// Media
+@media only all and (max-width: 1350px) {
+	.max-content-width {
+		max-width: none;
+		margin: 0;
+		padding: 0 62px;
+	}
+}
+
+@media only all and (max-width: 768px) {
+	.max-content-width {
+		max-width: none;
+		margin: 0;
+		padding: 0 21px;
+	}
+}
