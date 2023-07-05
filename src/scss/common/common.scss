@@ -16,12 +16,16 @@ body {
 }
 
 // Button
-.border-radius-wrapper {
+.contact-but-gradient-radius {
 	width: 284px;
 	height: 60px;
 	padding: 1px;
 	background: $brand-gradient;
 	border-radius: 1px;
+
+	&:hover {
+		background: #fff;
+	}
 }
 .contact-button {
 	position: relative;
@@ -31,10 +35,6 @@ body {
 	padding: 0;
 	cursor: pointer;
 	border: none;
-	// border: solid 1px #fff;
-	// border-image: $brand-gradient;
-	// border-image-slice: 1;
-	// border-radius: 1px;
 	z-index: 1;
 
 	span {
@@ -50,7 +50,6 @@ body {
 		width: 100%;
 		z-index: -2;
 		background-color: $bg-color;
-		// border-radius: 1px;
 	}
 	&:after {
 		content: '';
@@ -62,7 +61,6 @@ body {
 		z-index: -1;
 		transition: height 0.2s ease, box-shadow 0.2s ease;
 		background-color: #fff;
-		// border-radius: 1px;
 	}
 	&:hover {
 		border-image: none;

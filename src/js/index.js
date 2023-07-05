@@ -11,12 +11,13 @@ import 'swiper/scss';
 import 'swiper/scss/navigation';
 
 import './animation/svg-animation';
+// import './animation/border-animation';
+
 import smoothScroll from './modules/smooth-scroll';
 import activeLinksController from './modules/active-links-controller';
 import navScroll from './modules/nav-scroll';
 
 const casesSlider = new Swiper('.cases-slider', {
-	slideClass: 'cases-slide-item',
 	slidesPerView: 3,
 	spaceBetween: 30,
 	navigation: {
