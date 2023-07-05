@@ -10,7 +10,7 @@ import Swiper, {Navigation, Pagination} from 'swiper';
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 
-import './svg-anim/svg-animation';
+import './animation/svg-animation';
 import smoothScroll from './modules/smooth-scroll';
 import activeLinksController from './modules/active-links-controller';
 import navScroll from './modules/nav-scroll';
