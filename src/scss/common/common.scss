@@ -22,10 +22,6 @@ body {
 	padding: 1px;
 	background: $brand-gradient;
 	border-radius: 1px;
-
-	&:hover {
-		background: #fff;
-	}
 }
 .contact-button {
 	position: relative;
@@ -62,18 +58,6 @@ body {
 		transition: height 0.2s ease, box-shadow 0.2s ease;
 		background-color: #fff;
 	}
-	&:hover {
-		border-image: none;
-		span {
-			background: none;
-			background-clip: border-box;
-			-webkit-text-fill-color: initial;
-		}
-	}
-	&:hover:after {
-		height: 100%;
-		box-shadow: -35px 0 40px -40px #101010 inset, 35px 0 40px -40px #101010 inset;
-	}
 }
 
 // Headers
@@ -83,6 +67,27 @@ body {
 }
 
 // Media
+@media (hover: hover) and (pointer: fine), (pointer: coarse) {
+	.contact-but-gradient-radius {
+		&:hover {
+			background: #fff;
+		}
+	}
+	.contact-button {
+		&:hover {
+			border-image: none;
+			span {
+				background: none;
+				background-clip: border-box;
+				-webkit-text-fill-color: initial;
+			}
+		}
+		&:hover:after {
+			height: 100%;
+			box-shadow: -35px 0 40px -40px #101010 inset, 35px 0 40px -40px #101010 inset;
+		}
+	}
+}
 @media only all and (max-width: 1350px) {
 	.max-content-width {
 		max-width: none;
