@@ -381,6 +381,10 @@
 		top: 25%;
 		right: 5%;
 	}
+
+	.products-info {
+		background: no-repeat center/cover url('../assets/background/shape-pattern.svg');
+	}
 }
 @media (max-width: 1350px) {
 	.steps-wrapper {
