@@ -1,13 +1,14 @@
 export default function burger(burgerWrappers, burgerBut) {
-	const toggleMenu = () => {
+	const toggleMenu = (e) => {
 		if (!burgerBut.classList.contains('burger-active')) {
-			burgerOpen();
+			burgerOpen(e);
 		} else {
 			burgerClose();
 		}
 	};
 
-	const burgerOpen = () => {
+	const burgerOpen = (e) => {
+		e.stopPropagation();
 		burgerBut.classList.remove('burger-closed');
 		burgerBut.classList.add('burger-active');
 
@@ -26,5 +27,7 @@ export default function burger(burgerWrappers, burgerBut) {
 	};
 
 	burgerBut.addEventListener('click', toggleMenu);
-	// burgerWrapper.addEventListener('click', (e) => burgerClose(e, burgerBut));
+	burgerWrappers.forEach((item) => {
+		item.addEventListener('click', (e) => burgerClose(e, burgerBut));
+	});
 }
