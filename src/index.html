@@ -296,7 +296,7 @@
 							Leave us a message and we will contact you shortly
 						</div>
 					</div>
-					<form action="" class="contact-form">
+					<form action="" method="POST" class="contact-form" id="contact-form">
 						<label for="name-input" class="name-input-wrapper input-wrapper">
 							<input
 								class="contact-input"
@@ -323,11 +323,14 @@
 								type="text"
 								name="message"
 								id="message-input"
-								placeholder="I want to contact you"
+								placeholder="Hey, contact me"
 							></textarea>
 							<span>your message</span>
 						</label>
 					</form>
+					<div class="bg-gradient-contact" id="contact-send-message">
+						<div class="form-send-result-message">Sent successfully</div>
+					</div>
 				</div>
 			</section>
 		</main>

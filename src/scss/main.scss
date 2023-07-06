@@ -268,6 +268,7 @@
 	background-color: $bg-color;
 }
 .contact-wrapper {
+	position: relative;
 	@include grid(grid-template-columns, 332px 1fr, 10%);
 	justify-content: space-between;
 }
@@ -313,12 +314,20 @@
 	position: relative;
 	border: solid 1px #4a4a4a;
 	background-color: transparent;
-	transition: background-color 0.2s ease;
+	transition: background-color 0.2s ease, border-color 0.3s ease;
 	@include font(22px, 1.32, 400, $defaut-text-color);
 	@include size(100%, 100%);
 	padding: 24px 16px 7px;
 	resize: none;
 
+	&.contact-input-wrong {
+		border: solid 1px #db6b6b;
+	}
+	&.contact-input-filled + span {
+		transform: translateY(-12px);
+		opacity: 0.57;
+		font-size: 14px;
+	}
 	&::placeholder {
 		color: transparent;
 		transition: color 0.3s ease-in;
@@ -336,6 +345,34 @@
 			font-size: 14px;
 		}
 	}
+}
+.bg-gradient-contact {
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	margin-right: -50%;
+	transform: translateX(-50%);
+	padding: 1px;
+	background: $brand-gradient;
+	border-radius: 10px;
+	@include font(22px, 1.32, 500, $defaut-text-color);
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s ease;
+
+	&.show-message {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+.form-send-result-message {
+	width: 332px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: $bg-cover-color;
+	border-radius: 10px;
 }
 
 // Media

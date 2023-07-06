@@ -11,6 +11,7 @@ import Swiper, {Navigation, Pagination} from 'swiper';
 import 'swiper/scss';
 
 import './animation/svg-animation';
+import './form/form-validation';
 
 import smoothScroll from './modules/smooth-scroll';
 import activeLinksController from './modules/active-links-controller';
