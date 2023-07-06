@@ -67,7 +67,7 @@ body {
 }
 
 // Media
-@media (hover: hover) and (pointer: fine), (pointer: coarse) {
+@media (hover: hover) {
 	.contact-but-gradient-radius {
 		&:hover {
 			background: #fff;
@@ -88,7 +88,7 @@ body {
 		}
 	}
 }
-@media only all and (max-width: 1350px) {
+@media (max-width: 1350px) {
 	.max-content-width {
 		max-width: none;
 		margin: 0;
@@ -96,7 +96,7 @@ body {
 	}
 }
 
-@media only all and (max-width: 768px) {
+@media (max-width: 768px) {
 	.max-content-width {
 		max-width: none;
 		margin: 0;

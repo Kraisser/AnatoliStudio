@@ -63,6 +63,9 @@ smoothScroll(smoothLinks, activeLinksControl);
 
 // Burger
 const burgerBut = document.querySelector('.burger-icon');
-const burgerMenu = document.querySelector('.header-content');
+const burgerMenu = [
+	document.querySelector('.header-content'),
+	document.querySelector('.main-burger-menu'),
+];
 
 burger(burgerMenu, burgerBut);

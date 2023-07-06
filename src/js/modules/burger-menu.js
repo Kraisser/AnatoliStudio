@@ -1,4 +1,4 @@
-export default function burger(burgerWrapper, burgerBut) {
+export default function burger(burgerWrappers, burgerBut) {
 	const toggleMenu = () => {
 		if (!burgerBut.classList.contains('burger-active')) {
 			burgerOpen();
@@ -8,25 +8,23 @@ export default function burger(burgerWrapper, burgerBut) {
 	};
 
 	const burgerOpen = () => {
-		// console.log('open');
 		burgerBut.classList.remove('burger-closed');
 		burgerBut.classList.add('burger-active');
 
-		burgerWrapper.classList.add('burger-menu-active');
+		burgerWrappers.forEach((item) => {
+			item.classList.add('burger-menu-active');
+		});
 	};
 
-	const burgerClose = (e, but) => {
-		// console.log('e.target === but: ', e.currentTarget);
-		// if (e.target === but) {
-		// 	return;
-		// }
-		// console.log('close');
+	const burgerClose = () => {
 		burgerBut.classList.remove('burger-active');
 		burgerBut.classList.add('burger-closed');
 
-		burgerWrapper.classList.remove('burger-menu-active');
+		burgerWrappers.forEach((item) => {
+			item.classList.remove('burger-menu-active');
+		});
 	};
 
 	burgerBut.addEventListener('click', toggleMenu);
-	burgerWrapper.addEventListener('click', (e) => burgerClose(e, burgerBut));
+	// burgerWrapper.addEventListener('click', (e) => burgerClose(e, burgerBut));
 }

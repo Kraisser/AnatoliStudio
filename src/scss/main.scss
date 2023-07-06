@@ -339,13 +339,13 @@
 }
 
 // Media
-@media only all and (max-width: 1440px) {
+@media (max-width: 1440px) {
 	.background-anim-svg {
 		top: 25%;
 		right: 5%;
 	}
 }
-@media only all and (max-width: 1350px) {
+@media (max-width: 1350px) {
 	.steps-wrapper {
 		grid-gap: 55px;
 	}
@@ -364,7 +364,7 @@
 		}
 	}
 }
-@media only all and (max-width: 1260px) {
+@media (max-width: 1260px) {
 	.done-wrapper {
 		grid-template-columns: min-content auto auto;
 		grid-gap: 30px;
@@ -377,7 +377,7 @@
 		}
 	}
 }
-@media only all and (max-width: 1024px) {
+@media (max-width: 1024px) {
 	.welcome-content {
 		padding: 208px 0 112px;
 	}
@@ -448,7 +448,7 @@
 	}
 }
 
-@media only all and (max-width: 768px) {
+@media (max-width: 768px) {
 	.welcome-page {
 		display: grid;
 	}
@@ -516,7 +516,7 @@
 	}
 }
 
-@media only all and (max-width: 425px) {
+@media (max-width: 425px) {
 	.background-anim-svg {
 		justify-self: center;
 		left: -45%;
