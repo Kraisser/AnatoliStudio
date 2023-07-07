@@ -12,6 +12,10 @@
 	overflow: visible;
 	top: 15%;
 	right: 15%;
+
+	path {
+		will-change: transform;
+	}
 }
 .welcome-wrapper {
 	@include grid(grid-template-columns, min-content);
