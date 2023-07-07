@@ -8,7 +8,7 @@
 }
 .background-anim-svg {
 	position: absolute;
-	filter: blur(100px);
+	filter: blur(80px);
 	overflow: visible;
 	top: 15%;
 	right: 15%;
@@ -509,7 +509,9 @@
 	.background-anim-svg {
 		justify-self: center;
 		right: auto;
-		top: 0;
+		top: -50px;
+		width: 375px;
+		height: 375px;
 	}
 
 	.production-steps {
@@ -564,7 +566,6 @@
 @media (max-width: 425px) {
 	.background-anim-svg {
 		justify-self: center;
-		left: -45%;
 		top: -15%;
 	}
 	.cases-wrapper {
