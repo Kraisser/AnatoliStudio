@@ -2,6 +2,8 @@ import 'normalize.css';
 
 import '../scss/common/common.scss';
 
+// import '../scss/common/mixins.scss';
+// import '../scss/common/variables.scss';
 import '../scss/header.scss';
 import '../scss/main.scss';
 import '../scss/footer.scss';
