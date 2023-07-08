@@ -41,6 +41,7 @@ const casesSlider = new Swiper('.cases-slider', {
 		clickable: true,
 	},
 	modules: [Navigation, Pagination],
+	// loop: true,
 });
 
 const navSelectorList = [

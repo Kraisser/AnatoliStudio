@@ -59,14 +59,30 @@
 					viewBox="0 0 500 500"
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
+					overflow="visible"
 				>
+					<defs>
+						<filter
+							id="blur"
+							color-interpolation-filters="sRGB"
+							x="-100%"
+							width="300%"
+							y="-100%"
+							height="300%"
+						>
+							<feGaussianBlur in="SourceGraphic" stdDeviation="100" result="blur-out" />
+							<!-- <feBlend in="SourceGraphic" in2="blur-out" mode="normal" /> -->
+						</filter>
+					</defs>
 					<path
+						filter="url(#blur)"
 						fill-rule="evenodd"
 						clip-rule="evenodd"
 						d="M256 43C310 32 363 72 395 117C423 156 412 207 409 255C407 299 405 343 379 378C348 418 307 462 256 460C206 457 178 404 146 366C118 332 83 299 86 255C89 214 136 194 162 161C195 120 205 52 256 43Z"
 						fill="#F4CA36"
 					/>
 					<path
+						filter="url(#blur)"
 						fill-rule="evenodd"
 						clip-rule="evenodd"
 						d="M374 54C417 53 467 41 497 71C528 101 506 151 514 193C527 256 588 317 557 373C525 433 442 460 374 448C312 437 291 364 249 317C211 275 144 248 146 193C148 137 209 105 257 76C292 55 333 55 374 54Z"
@@ -219,7 +235,7 @@
 				</div>
 				<div class="prices-wrapper max-content-width">
 					<div class="prices-cards">
-						<div class="price-card favourite">
+						<div class="price-card">
 							<h4>2D Video Ads</h4>
 							<div class="price-services">Idea generation → Video animation</div>
 							<div class="underline"></div>

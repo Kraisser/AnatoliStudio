@@ -8,17 +8,18 @@
 }
 .background-anim-svg {
 	position: absolute;
-	filter: blur(80px);
-	overflow: visible;
 	top: 15%;
 	right: 15%;
+	overflow: visible;
 
 	path {
 		will-change: transform;
 	}
 }
 .welcome-wrapper {
+	position: relative;
 	@include grid(grid-template-columns, min-content);
+	z-index: 2;
 }
 .welcome-content {
 	padding: 326px 0 188px;
@@ -207,10 +208,8 @@
 	max-width: 332px;
 	padding: 35px 25px 25px;
 	border-radius: 10px;
+	background-color: $bg-color;
 
-	&.favourite {
-		background-color: $bg-color;
-	}
 	h4 {
 		@include font(32px, 1.32, 700, $defaut-text-color);
 		margin: 0;
@@ -422,6 +421,25 @@
 		}
 	}
 }
+@media (max-width: 1060px) {
+	.prices {
+		padding: 110px 0 78px;
+	}
+	.prices-cards {
+		flex-wrap: wrap;
+		justify-content: space-around;
+		gap: 40px 40px;
+	}
+	.price-card {
+		max-width: 400px;
+		background-color: #101010;
+		display: grid;
+
+		& .contact-but-gradient-radius {
+			justify-self: center;
+		}
+	}
+}
 @media (max-width: 1024px) {
 	.welcome-content {
 		padding: 208px 0 112px;
@@ -430,7 +448,7 @@
 		margin-bottom: 32px;
 	}
 	.background-anim-svg {
-		top: 25%;
+		top: 10%;
 		right: 0%;
 	}
 
@@ -454,24 +472,6 @@
 
 	.clients {
 		flex-wrap: wrap;
-	}
-
-	.prices {
-		padding: 110px 0 78px;
-	}
-	.prices-cards {
-		flex-wrap: wrap;
-		justify-content: space-around;
-		gap: 40px 40px;
-	}
-	.price-card {
-		max-width: 400px;
-		background-color: #101010;
-		display: grid;
-
-		& .contact-but-gradient-radius {
-			justify-self: center;
-		}
 	}
 
 	.steps-wrapper {

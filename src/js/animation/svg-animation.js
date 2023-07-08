@@ -50,3 +50,6 @@ const frontRightSvg = anime({
 	duration: 12500,
 	loop: true,
 });
+
+// backLeftSvg.pause();
+// frontRightSvg.pause();
