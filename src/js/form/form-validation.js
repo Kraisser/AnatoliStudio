@@ -78,8 +78,10 @@ function formReset() {
 
 function showMessage(text) {
 	sendMessageText.innerHTML = text;
+	form.classList.add('form-inactive')
 	sendMessageWrapper.classList.add('show-message');
 	setTimeout(() => {
+		form.classList.remove('form-inactive');
 		sendMessageWrapper.classList.remove('show-message');
 	}, 3000);
 }
