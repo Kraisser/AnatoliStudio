@@ -97,29 +97,29 @@ function sendAnswerMessage(result, errorCode) {
 	}
 }
 
-form.addEventListener('keydown', (e) => {
-	if (e.keyCode === 13) {
-		const formValid = validateAll();
+form.addEventListener('submit', (e) => {
+	e.preventDefault();
 
-		if (formValid) {
-			const data = new FormData(form);
+	const formValid = validateAll();
 
-			const request = fetch(fetchURL, {
-				method: 'POST',
-				body: data,
-				headers: {
-					Accept: 'application/json',
-				},
+	if (formValid) {
+		const data = new FormData(form);
+		console.log('data: ', data);
+
+		const request = fetch(fetchURL, {
+			method: 'POST',
+			body: data,
+			headers: {
+				Accept: 'application/json',
+			},
+		});
+
+		request
+			.then((response) => {
+				sendAnswerMessage(response.ok);
+			})
+			.catch((error) => {
+				sendAnswerMessage(false, error.code);
 			});
-
-			request
-				.then((response) => {
-					sendAnswerMessage(response.ok);
-				})
-				.catch((error) => {
-					sendAnswerMessage(false, error.code);
-				});
-		}
-		console.log('invalid form');
 	}
 });

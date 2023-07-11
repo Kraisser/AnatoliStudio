@@ -281,11 +281,15 @@
 	}
 }
 
+.contact-form-wrapper {
+	@include grid(grid-template-columns, 1fr, 23px);
+}
+
 .contact-form {
 	display: grid;
-	grid-template-columns: [name-start email-start] 2fr [name-end email-end message-start] 3fr [message-end];
+	grid-template-columns: [name-start email-start] 2fr [name-end email-end message-start submit-start] 3fr [message-end submit-end];
 	grid-gap: 21px 23px;
-	grid-template-rows: [name-start message-start] 60px [name-end email-start] 60px [email-end message-end];
+	grid-template-rows: [name-start message-start] 60px [name-end email-start] 60px [email-end message-end submit-start] 60px [submit-end];
 
 	.name-input-wrapper {
 		grid-area: name;
@@ -295,6 +299,10 @@
 	}
 	.message-input-wrapper {
 		grid-area: message;
+	}
+	.submit-but-wrapper {
+		grid-area: submit;
+		justify-self: flex-end;
 	}
 }
 
@@ -554,9 +562,13 @@
 	}
 
 	.contact-form {
-		grid-template-columns: [name-start email-start message-start] 1fr [name-end email-end message-end];
-		grid-template-rows: [name-start] 60px [name-end email-start] 60px [email-end message-start] 195px[message-end];
+		grid-template-columns: [name-start email-start message-start submit-start] 1fr [name-end email-end message-end submit-end];
+		grid-template-rows: [name-start] 60px [name-end email-start] 60px [email-end message-start] 195px[message-end submit-start] 60px [submit-end];
 		grid-gap: 30px;
+
+		.submit-but-wrapper {
+			justify-self: center;
+		}
 	}
 }
 

@@ -23,15 +23,19 @@ body {
 	background: $brand-gradient;
 	border-radius: 1px;
 }
-.contact-button {
+.gradient-but {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	position: relative;
 	height: 100%;
 	width: 100%;
 	font-size: 22px;
 	padding: 0;
 	cursor: pointer;
-	border: none;
 	z-index: 1;
+	border: none;
+	text-decoration: none;
 
 	span {
 		color: $but-hover-text-color;
@@ -73,7 +77,7 @@ body {
 			background: #fff;
 		}
 	}
-	.contact-button {
+	.gradient-but {
 		&:hover {
 			border-image: none;
 			span {
