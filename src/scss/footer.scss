@@ -5,11 +5,22 @@
 	height: 60px;
 	display: flex;
 	justify-content: space-between;
+	gap: 10px;
 	align-items: center;
 	@include font(18px, 1.1, 400, $defaut-text-color);
 }
-.footer-authors {
-	display: flex;
-	gap: 13px;
-	justify-self: center;
+
+// Media
+@media (max-width: 630px) {
+	.footer-wrapper {
+		height: auto;
+		flex-direction: column;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+}
+@media (max-width: 500px) {
+	.footer-authors {
+		text-align: right;
+	}
 }
