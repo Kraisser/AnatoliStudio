@@ -5,6 +5,7 @@ import '../scss/common/common.scss';
 import '../scss/header.scss';
 import '../scss/main.scss';
 import '../scss/footer.scss';
+import '../scss/modal.scss';
 import '../scss/burger-menu.scss';
 
 import Swiper, {Navigation, Pagination} from 'swiper';
@@ -12,6 +13,7 @@ import 'swiper/scss';
 
 import './animation/svg-animation';
 import './form/form-validation';
+import './modules/modal';
 
 import smoothScroll from './modules/smooth-scroll';
 import activeLinksController from './modules/active-links-controller';

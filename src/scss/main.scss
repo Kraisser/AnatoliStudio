@@ -11,10 +11,7 @@
 	top: 15%;
 	right: 15%;
 	overflow: visible;
-
-	path {
-		will-change: transform;
-	}
+	will-change: transform;
 }
 .welcome-wrapper {
 	position: relative;
@@ -89,6 +86,7 @@
 .cases-slide-item {
 	position: relative;
 	overflow: hidden;
+	cursor: pointer;
 
 	img {
 		width: 100%;
