@@ -22,12 +22,12 @@
 .slider-modal-wrapper {
 	img {
 		opacity: 0;
-		transform: scale(0.75);
-		transition: all 5s ease;
-	}
-	img.loaded {
-		opacity: 1;
-		transform: scale(1);
+		transform: scale(0.9);
+		transition: all 0.3s ease;
+		&.loaded {
+			opacity: 1;
+			transform: scale(1);
+		}
 	}
 }
 .modal-close-icon {

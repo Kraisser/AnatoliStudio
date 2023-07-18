@@ -18,7 +18,7 @@ const loadingSpinner = `<svg
 							cy="50"
 							fill="none"
 							stroke="#ffffff"
-							stroke-width="4"
+							stroke-width="8"
 							r="35"
 							stroke-dasharray="164.93361431346415 56.97787143782138"
 						>
@@ -47,14 +47,8 @@ modalOverflow.addEventListener('click', (e) => {
 function toggleModal(target, open) {
 	if (open) {
 		modalOverflow.classList.add('slider-modal-opened');
-		modalOverflow.addEventListener(
-			'transitionend',
-			(e) => {
-				disablePageScroll(modalWrapper);
-				const newImg = setupImage(target);
-			},
-			{once: true}
-		);
+		disablePageScroll(modalWrapper);
+		setupImage(target);
 	} else {
 		enablePageScroll(modalWrapper);
 		modalOverflow.classList.remove('slider-modal-opened');
@@ -81,11 +75,21 @@ function setupImage(target) {
 		imgCopy.onload = () => {
 			modalWrapper.innerHTML = '';
 			modalWrapper.insertAdjacentElement('beforeend', imgCopy);
-			imgCopy.classList.add('loaded');
+			imgTransition(imgCopy);
 		};
 
 		imgCopy.onerror = () => toggleModal(target, false);
 	} else {
 		toggleModal(target, false);
 	}
+}
+
+function imgTransition(img) {
+	modalOverflow.addEventListener(
+		'transitionend',
+		(e) => {
+			img.classList.add('loaded');
+		},
+		{once: true}
+	);
 }
