@@ -74,20 +74,47 @@
 							<!-- <feBlend in="SourceGraphic" in2="blur-out" mode="normal" /> -->
 						</filter>
 					</defs>
-					<path
-						filter="url(#blur)"
-						fill-rule="evenodd"
-						clip-rule="evenodd"
-						d="M256 43C310 32 363 72 395 117C423 156 412 207 409 255C407 299 405 343 379 378C348 418 307 462 256 460C206 457 178 404 146 366C118 332 83 299 86 255C89 214 136 194 162 161C195 120 205 52 256 43Z"
-						fill="#F4CA36"
-					/>
-					<path
-						filter="url(#blur)"
-						fill-rule="evenodd"
-						clip-rule="evenodd"
-						d="M374 54C417 53 467 41 497 71C528 101 506 151 514 193C527 256 588 317 557 373C525 433 442 460 374 448C312 437 291 364 249 317C211 275 144 248 146 193C148 137 209 105 257 76C292 55 333 55 374 54Z"
-						fill="#F436E1"
-					/>
+					<path fill="#F4CA36" filter="url(#blur)" fill-rule="evenodd" clip-rule="evenodd">
+						<animate
+							attributeName="d"
+							dur="12500ms"
+							repeatCount="indefinite"
+							keyTimes="0; .25; .50; .75; 1"
+							values="M256 43C310 32 363 72 395 117C423 156 412 207 409 255C407 299 405 343 379 378C348 418 307 462 256 460C206 457 178 404 146 366C118 332 83 299 86 255C89 214 136 194 162 161C195 120 205 52 256 43Z;
+
+							M-121 400C-144 346 -54 293 47 261C136 233 252 244 361 247C460 249 559 251 638 277C731 308 831 349 825 400C819 450 699 478 612 510C536 538 459 573 361 570C266 567 221 520 147 494C54 461 -99 451 -121 400Z;
+
+							M397 458C343 469 290 429 258 384C230 345 241 294 244 246C246 202 248 158 274 123C305 83 346 39 397 41C447 44 475 97 507 135C535 169 570 202 567 246C564 287 517 307 491 340C458 381 448 449 397 458Z;
+
+							M396 226C404 270 371 314 335 340C302 364 260 355 220 352C185 350 149 348 120 327C86 302 50 268 52 226C54 185 98 162 130 135C157 112 185 83 220 86C255 89 271 127 298 148C332 175 388 184 396 226Z;
+
+							M256 43C310 32 363 72 395 117C423 156 412 207 409 255C407 299 405 343 379 378C348 418 307 462 256 460C206 457 178 404 146 366C118 332 83 299 86 255C89 214 136 194 162 161C195 120 205 52 256 43Z;"
+						/>
+					</path>
+					<path filter="url(#blur)" fill-rule="evenodd" clip-rule="evenodd" fill="#F436E1">
+						<animate
+							attributeName="d"
+							dur="12500ms"
+							repeatCount="indefinite"
+							keyTimes="0; .25; .50; .75; 1"
+							values="M374 54C417 53 467 41 497 71C528 101 506 151 514 193C527 256 588 317 557 373C525 433 442 460 374 448C312 437 291 364 249 317C211 275 144 248 146 193C148 137 209 105 257 76C292 55 333 55 374 54Z;
+
+							M547 441C548 524 560 620 530 679C500 738 450 696 408 712C345 737 284 855 228 795C168 732 141 572 153 441C164 321 237 280 284 199C326 127 353 -3 408 0C464 4 496 122 525 214C546 282 546 361 547 441Z;
+
+							M192 448C149 449 100 461 69 431C39 401 60 351 52 310C39 247 -22 186 9 129C41 69 124 42 192 54C254 65 276 138 318 185C355 227 422 254 420 309C419 364 358 397 310 426C275 447 234 447 192 448Z;
+
+							M189 185C189 153 180 115 202 93C225 70 262 86 293 80C341 70 386 24 429 47C474 72 494 134 485 185C476 232 421 248 386 279C355 307 335 357 293 356C252 355 228 309 206 273C190 246 190 216 189 185Z;
+
+							M374 54C417 53 467 41 497 71C528 101 506 151 514 193C527 256 588 317 557 373C525 433 442 460 374 448C312 437 291 364 249 317C211 275 144 248 146 193C148 137 209 105 257 76C292 55 333 55 374 54Z;"
+						/>
+						<animate
+							attributeName="fill"
+							dur="12500ms"
+							repeatCount="indefinite"
+							keyTimes="0; .25; .50; .75; 1"
+							values="#F436E1; #F57CFF; #F57CFF; #F436E1; #F436E1;"
+						/>
+					</path>
 				</svg>
 			</section>
 
@@ -179,10 +206,17 @@
 						<div class="swiper-wrapper cases-slide-wrapper">
 							<div class="bg-gradient swiper-slide">
 								<div class="cases-slide-item">
-									<img
-										src="./assets/images/slider/tabou-stories_love-episodes.jpg"
-										alt="tabou-stories_love-episodes"
-									/>
+									<picture>
+										<source
+											srcset="./assets/images/slider/mystery-manor.jpg"
+											type="image/jpeg"
+											media="(max-width:1200px)"
+										/>
+										<img
+											src="./assets/images/slider/tabou-stories_love-episodes.jpg"
+											alt="tabou-stories_love-episodes"
+										/>
+									</picture>
 									<div class="slide-item-content">
 										<div class="slide-item-text">Tabou Stories: Love Episodes</div>
 									</div>

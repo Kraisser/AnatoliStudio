@@ -31,7 +31,6 @@
 		"webpack-dev-server": "^4.9.3"
 	},
 	"dependencies": {
-		"animejs": "^3.2.1",
 		"normalize.css": "^8.0.1",
 		"scroll-lock": "^2.1.5",
 		"swiper": "^9.4.1"

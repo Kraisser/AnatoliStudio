@@ -11,7 +11,10 @@
 	top: 15%;
 	right: 15%;
 	overflow: visible;
-	will-change: transform;
+
+	// path {
+	// 	will-change: transform;
+	// }
 }
 .welcome-wrapper {
 	position: relative;

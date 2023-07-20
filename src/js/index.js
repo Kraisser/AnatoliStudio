@@ -11,7 +11,7 @@ import '../scss/burger-menu.scss';
 import Swiper, {Navigation, Pagination} from 'swiper';
 import 'swiper/scss';
 
-import './animation/svg-animation';
+// import './animation/svg-animation';
 import './form/form-validation';
 import './modules/modal';
 

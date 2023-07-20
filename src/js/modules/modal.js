@@ -64,6 +64,8 @@ function toggleModal(target, open) {
 
 function setupImage(target) {
 	const img = target.querySelector('.cases-slide-item img');
+	const img2 = target.querySelector('.cases-slide-item picture');
+	console.log('img2: ', img2);
 	if (img) {
 		const imgCopy = document.createElement('img');
 		const path = img.getAttribute('src');
