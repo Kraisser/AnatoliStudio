@@ -4,6 +4,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 let mode = 'development';
 let target = 'web';
@@ -37,6 +38,7 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, 'build'),
 		filename: '[name].bundle.js',
+		assetModuleFilename: 'assets/[name][ext]',
 		clean: true,
 	},
 	target,
@@ -82,7 +84,7 @@ module.exports = {
 						options: {
 							postcssOptions: {
 								sourceMap: true,
-								plugins: [require('autoprefixer')],
+								plugins: [autoprefixer],
 							},
 						},
 					},
@@ -92,6 +94,14 @@ module.exports = {
 		],
 	},
 	plugins: [
+		new CopyPlugin({
+			patterns: [
+				{
+					from: path.resolve(__dirname, 'src/assets/video'),
+					to: path.resolve(__dirname, 'build/assets/video'),
+				},
+			],
+		}),
 		new MiniCssExtractPlugin({
 			filename: '[name].[contenthash].css',
 		}),

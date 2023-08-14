@@ -1,6 +1,7 @@
+import videojs from 'video.js';
 import {disablePageScroll, enablePageScroll} from 'scroll-lock';
 
-const triggers = document.querySelectorAll('.cases-slide-item');
+const slideTriggers = document.querySelectorAll('.cases-slide-item');
 const modalOverflow = document.querySelector('.slider-modal-overflow');
 const modalWrapper = document.querySelector('.slider-modal-wrapper');
 const modalCloseIcon = modalOverflow.querySelector('.modal-close-icon');
@@ -33,8 +34,10 @@ const loadingSpinner = `<svg
 						</circle>
 					</svg>`;
 
-triggers.forEach((item) => {
-	item.addEventListener('click', (e) => toggleModal(item, true));
+let activePlayer;
+
+slideTriggers.forEach((item) => {
+	item.addEventListener('click', () => toggleModal(item, true));
 });
 
 modalCloseIcon.addEventListener('click', (e) => toggleModal(e, false));
@@ -48,13 +51,18 @@ function toggleModal(target, open) {
 	if (open) {
 		modalOverflow.classList.add('slider-modal-opened');
 		disablePageScroll(modalWrapper);
-		setupImage(target);
+		activePlayer = setupVideo(target);
 	} else {
+		if (activePlayer) {
+			activePlayer.dispose();
+		}
+
 		enablePageScroll(modalWrapper);
 		modalOverflow.classList.remove('slider-modal-opened');
+
 		modalOverflow.addEventListener(
 			'transitionend',
-			(e) => {
+			() => {
 				modalWrapper.innerHTML = loadingSpinner;
 			},
 			{once: true}
@@ -62,36 +70,48 @@ function toggleModal(target, open) {
 	}
 }
 
-function setupImage(target) {
-	const img = target.querySelector('.cases-slide-item img');
-	const img2 = target.querySelector('.cases-slide-item picture');
-	console.log('img2: ', img2);
-	if (img) {
-		const imgCopy = document.createElement('img');
-		const path = img.getAttribute('src');
-		const alt = img.getAttribute('alt');
+function setupVideo(target) {
+	const fullSrc = target.dataset.videoSrc.split('.');
+	const [videoName, videoExt] = [fullSrc[0], fullSrc[1]];
+	const aspectRatio = countAspectRatio();
+	const videoPath = `${videoName}${aspectRatio}.${videoExt}`;
 
-		imgCopy.src = path;
-		imgCopy.alt = alt;
+	modalWrapper.innerHTML = `
+	<div class="slide-video-wrapper">
+		<video class="vjs-modal-custom video-js vjs-default-skin" id="video-js-modal">
+			<source
+				src="${videoPath}"
+				type="video/mp4"
+			/>
+			<p>Your browser does not support HTML5 video</p>
+		</video>
+	</div>
+	`;
 
-		imgCopy.onload = () => {
-			modalWrapper.innerHTML = '';
-			modalWrapper.insertAdjacentElement('beforeend', imgCopy);
-			imgTransition(imgCopy);
-		};
+	// modalWrapper.querySelector('.video-js')
+	const activePlayer = videojs('video-js-modal', {
+		controls: true,
+		autoplay: false,
+		preload: 'auto',
+		fluid: true,
+		notSupportedMessage: 'There was an error uploading the video, please try again later',
+	});
 
-		imgCopy.onerror = () => toggleModal(target, false);
-	} else {
-		toggleModal(target, false);
-	}
+	return activePlayer;
 }
 
-function imgTransition(img) {
-	modalOverflow.addEventListener(
-		'transitionend',
-		(e) => {
-			img.classList.add('loaded');
-		},
-		{once: true}
-	);
+function countAspectRatio() {
+	const screenWidth = window.innerWidth;
+	const screenHeight = window.innerHeight;
+	const aspectRatio = Math.abs(screenWidth / screenHeight);
+
+	if (aspectRatio < 0.68) {
+		return '9x16';
+	} else if (aspectRatio >= 0.68 && aspectRatio < 0.9) {
+		return '4x5';
+	} else if (aspectRatio >= 0.9 && aspectRatio < 1.39) {
+		return '1x1';
+	} else {
+		return '16x9';
+	}
 }

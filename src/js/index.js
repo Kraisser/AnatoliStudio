@@ -7,6 +7,9 @@ import '../scss/main.scss';
 import '../scss/footer.scss';
 import '../scss/modal.scss';
 import '../scss/burger-menu.scss';
+import '../scss/video-js-style.scss';
+
+import 'video.js/dist/video-js.css';
 
 import Swiper, {Navigation, Pagination} from 'swiper';
 import 'swiper/scss';
