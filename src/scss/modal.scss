@@ -1,3 +1,5 @@
+@import './common/variables.scss';
+
 .slider-modal-overflow {
 	position: fixed;
 	top: 0;
@@ -30,10 +32,11 @@
 }
 .modal-close-icon {
 	position: absolute;
-	right: 30px;
-	top: 30px;
+	right: 20px;
+	top: 20px;
 	cursor: pointer;
 	z-index: 10;
+	background-color: rgba(16, 16, 16, 0.5);
 }
 
 @media (max-width: 768px) {
@@ -41,8 +44,3 @@
 		padding: 5%;
 	}
 }
-// @media (max-width: 480px) {
-// 	.slider-modal-overflow {
-// 		padding: 10px;
-// 	}
-// }

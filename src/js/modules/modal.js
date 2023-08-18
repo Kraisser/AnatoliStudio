@@ -96,10 +96,14 @@ function setupVideo(target) {
 		autoplay: false,
 		preload: 'auto',
 		// fluid: true,
+		controlBar: {
+			pictureInPictureToggle: false,
+		},
 		fill: true,
 		disablePictureInPicture: true,
 		notSupportedMessage: 'There was an error uploading the video, please try again later',
 	});
+	console.log('activePlayer: ', activePlayer);
 
 	return activePlayer;
 }
