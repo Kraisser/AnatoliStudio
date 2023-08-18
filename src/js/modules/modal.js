@@ -76,9 +76,10 @@ function setupVideo(target) {
 	const aspectRatio = countAspectRatio();
 	const videoPath = `${videoName}${aspectRatio}.${videoExt}`;
 
+	console.log('modalWrapper: ', modalWrapper.clientWidth);
 	modalWrapper.innerHTML = `
 	<div class="slide-video-wrapper">
-		<video class="vjs-modal-custom video-js vjs-default-skin" id="video-js-modal">
+		<video class="vjs-modal-custom video-js" id="video-js-modal">
 			<source
 				src="${videoPath}"
 				type="video/mp4"
@@ -88,12 +89,15 @@ function setupVideo(target) {
 	</div>
 	`;
 
-	// modalWrapper.querySelector('.video-js')
 	const activePlayer = videojs('video-js-modal', {
+		width: modalWrapper.clientWidth,
+		height: modalWrapper.clientHeight,
 		controls: true,
 		autoplay: false,
 		preload: 'auto',
-		fluid: true,
+		// fluid: true,
+		fill: true,
+		disablePictureInPicture: true,
 		notSupportedMessage: 'There was an error uploading the video, please try again later',
 	});
 
