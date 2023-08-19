@@ -1,4 +1,4 @@
-export default function activeLinksController(navList = [], activeClass, id) {
+export default function activeLinksController(navList = [], activeClass) {
 	if (navList && activeClass) {
 		return function (id) {
 			navList.forEach((linkList) => {

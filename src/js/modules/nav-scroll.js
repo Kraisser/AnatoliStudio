@@ -8,7 +8,7 @@ export default function navScroll(observedEntriesSelector, callback) {
 			});
 		},
 		{
-			threshold: 0.7,
+			threshold: 0.4,
 		}
 	);
 

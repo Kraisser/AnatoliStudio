@@ -48,6 +48,7 @@ const casesSlider = new Swiper('.cases-slider', {
 	loop: true,
 });
 
+// Observer
 const navSelectorList = [
 	document.querySelector('.main-menu'),
 	document.querySelector('.main-burger-menu'),
@@ -62,6 +63,7 @@ observedTargets.forEach((item) => {
 	navScroll(id, activeLinksControl);
 });
 
+// Smoothscroll
 const smoothLinks = document.querySelectorAll('a[href^="#"]');
 smoothScroll(smoothLinks, activeLinksControl);
 
