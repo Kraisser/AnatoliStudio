@@ -22,7 +22,16 @@ import activeLinksController from './modules/active-links-controller';
 import navScroll from './modules/nav-scroll';
 import burger from './modules/burger-menu';
 
-const casesSlider = new Swiper('.cases-slider', {
+// Burger
+const burgerBut = document.querySelector('.burger-icon');
+const burgerMenu = [
+	document.querySelector('.header-content'),
+	document.querySelector('.main-burger-menu'),
+];
+
+burger(burgerMenu, burgerBut);
+
+new Swiper('.cases-slider', {
 	slidesPerView: 1,
 	spaceBetween: 30,
 	breakpoints: {
@@ -56,9 +65,9 @@ const navSelectorList = [
 
 const activeLinksControl = activeLinksController(navSelectorList, 'active');
 
-const observedTargets = document.querySelectorAll('.main-menu a');
+const observedTargetsId = document.querySelectorAll('.main-menu a');
 
-observedTargets.forEach((item) => {
+observedTargetsId.forEach((item) => {
 	const id = item.getAttribute('href').slice(1);
 	navScroll(id, activeLinksControl);
 });
@@ -66,12 +75,3 @@ observedTargets.forEach((item) => {
 // Smoothscroll
 const smoothLinks = document.querySelectorAll('a[href^="#"]');
 smoothScroll(smoothLinks, activeLinksControl);
-
-// Burger
-const burgerBut = document.querySelector('.burger-icon');
-const burgerMenu = [
-	document.querySelector('.header-content'),
-	document.querySelector('.main-burger-menu'),
-];
-
-burger(burgerMenu, burgerBut);

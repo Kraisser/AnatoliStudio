@@ -70,11 +70,25 @@
 							y="-100%"
 							height="300%"
 						>
-							<feGaussianBlur in="SourceGraphic" stdDeviation="100" result="blur-out" />
-							<!-- <feBlend in="SourceGraphic" in2="blur-out" mode="normal" /> -->
+							<!-- filter="url(#blur)" -->
+							<!-- <feBlend in="SourceGraphic" result="blend-out" mode="normal" /> -->
+							<feGaussianBlur result="blur-out" in="SourceGraphic" stdDeviation="80" />
+							<feBlend mode="normal" in2="BackgroundImage" in="blur-out" />
 						</filter>
+						<!-- <filter
+							id="normalBlur"
+							color-interpolation-filters="sRGB"
+							x="-100%"
+							width="300%"
+							y="-100%"
+							height="300%"
+						>
+							<feGaussianBlur result="blur-out" in="SourceGraphic" stdDeviation="80" />
+							<feBlend mode="normal" in2="BackgroundImage" in="blur-out" />
+						</filter> -->
 					</defs>
-					<path fill="#F4CA36" filter="url(#blur)" fill-rule="evenodd" clip-rule="evenodd">
+
+					<path filter="url(#blur)" fill="#F4CA36" fill-rule="evenodd" clip-rule="evenodd">
 						<animate
 							attributeName="d"
 							dur="12500ms"

@@ -1,7 +1,7 @@
 import videojs from 'video.js';
 import {disablePageScroll, enablePageScroll} from 'scroll-lock';
 
-const slideTriggers = document.querySelectorAll('.cases-slide-item');
+const slideTriggers = document.querySelector('.cases-slide-item');
 const modalOverflow = document.querySelector('.slider-modal-overflow');
 const modalWrapper = document.querySelector('.slider-modal-wrapper');
 const modalCloseIcon = modalOverflow.querySelector('.modal-close-icon');
@@ -36,7 +36,8 @@ const loadingSpinner = `<svg
 
 let activePlayer;
 
-slideTriggers.forEach((item) => {
+console.log('slideTriggers: ', slideTriggers);
+[slideTriggers].forEach((item) => {
 	item.addEventListener('click', () => toggleModal(item, true));
 });
 
