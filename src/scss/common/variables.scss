@@ -12,9 +12,5 @@ $done-bg-color: #141414;
 
 // Gradients
 $brand-gradient: linear-gradient(135deg, #f4ca36 0, rgb(244, 54, 225) 100%);
-$showreel-slide-brand-gradient: linear-gradient(180deg, #c2a12c 0, #581452 100%);
-$default-slide-brand-gradient: linear-gradient(
-	180deg,
-	rgba(255, 255, 255, 0.3),
-	rgba(255, 255, 255, 0)
-);
+$showreel-slide-brand-gradient: linear-gradient(180deg, #af9227 0, #581452 100%);
+$default-slide-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
