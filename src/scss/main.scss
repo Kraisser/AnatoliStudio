@@ -81,9 +81,14 @@
 .cases-slide-wrapper {
 	margin-bottom: 50px;
 }
-.bg-gradient {
+.slide-bg-gradient {
 	padding: 2px;
-	background: linear-gradient(180deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+	background: $default-slide-brand-gradient;
+	border-radius: 3px;
+}
+.slide-showreel-bg-gradient {
+	padding: 2px;
+	background: $showreel-slide-brand-gradient;
 	border-radius: 3px;
 }
 .cases-slide-item {

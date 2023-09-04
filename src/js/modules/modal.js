@@ -1,4 +1,4 @@
-import videojs from 'video.js';
+// import videojs from 'video.js';
 import {disablePageScroll, enablePageScroll} from 'scroll-lock';
 
 const slideTriggers = document.querySelectorAll('.cases-slide-item');
@@ -47,18 +47,33 @@ modalOverflow.addEventListener('click', (e) => {
 	}
 });
 
-function toggleModal(target, open) {
-	if (open) {
+function toggleModal(target, opened) {
+	if (opened) {
 		modalOverflow.classList.add('slider-modal-opened');
 		disablePageScroll(modalWrapper);
-		activePlayer = setupVideo(target);
+		loadVideojs()
+			.then((videojs) => (activePlayer = setupVideo(videojs, target)))
+			.then(() => {
+				modalWrapper.querySelector('.slide-video-wrapper').classList.add('opened');
+				modalWrapper.addEventListener(
+					'transitionend',
+					() => {
+						activePlayer.play();
+					},
+					{once: true}
+				);
+			})
+			.catch((errorMessage) => {
+				modalWrapper.innerHTML = `<div class="custom-error-modal">${errorMessage}</div>`;
+				modalWrapper.addEventListener('click', (e) => toggleModal(e, false));
+			});
 	} else {
 		if (activePlayer) {
 			activePlayer.dispose();
 		}
 
-		enablePageScroll(modalWrapper);
 		modalOverflow.classList.remove('slider-modal-opened');
+		enablePageScroll(modalWrapper);
 
 		modalOverflow.addEventListener(
 			'transitionend',
@@ -70,7 +85,7 @@ function toggleModal(target, open) {
 	}
 }
 
-function setupVideo(target) {
+function setupVideo(videojsModule, target) {
 	const fullSrc = target.dataset.videoSrc.split('.');
 	const [videoName, videoExt] = [fullSrc[0], fullSrc[1]];
 	const aspectRatio = countAspectRatio();
@@ -88,11 +103,11 @@ function setupVideo(target) {
 	</div>
 	`;
 
-	const activePlayer = videojs('video-js-modal', {
+	const activePlayer = videojsModule('video-js-modal', {
 		width: modalWrapper.clientWidth,
 		height: modalWrapper.clientHeight,
 		controls: true,
-		autoplay: true,
+		autoplay: false,
 		preload: 'auto',
 		controlBar: {
 			pictureInPictureToggle: false,
@@ -101,9 +116,21 @@ function setupVideo(target) {
 		disablePictureInPicture: true,
 		notSupportedMessage: 'There was an error uploading the video, please try again later',
 	});
-	console.log('activePlayer: ', activePlayer);
 
 	return activePlayer;
+}
+
+function loadVideojs() {
+	return import('video.js')
+		.then(({default: videojs}) => {
+			return videojs;
+		})
+		.catch((error) => {
+			const errorMessage = 'Unable to load videoPlayer. ' + error.message;
+			console.log(error);
+
+			throw new Error(errorMessage);
+		});
 }
 
 function countAspectRatio() {

@@ -13,7 +13,6 @@ import '../scss/video-js-style.scss';
 import Swiper, {Navigation, Pagination} from 'swiper';
 import 'swiper/scss';
 
-// import './animation/svg-animation';
 import './form/form-validation';
 import './modules/modal';
 
