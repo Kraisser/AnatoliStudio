@@ -1,7 +1,7 @@
 import videojs from 'video.js';
 import {disablePageScroll, enablePageScroll} from 'scroll-lock';
 
-const slideTriggers = document.querySelector('.cases-slide-item');
+const slideTriggers = document.querySelectorAll('.cases-slide-item');
 const modalOverflow = document.querySelector('.slider-modal-overflow');
 const modalWrapper = document.querySelector('.slider-modal-wrapper');
 const modalCloseIcon = modalOverflow.querySelector('.modal-close-icon');
@@ -36,8 +36,7 @@ const loadingSpinner = `<svg
 
 let activePlayer;
 
-console.log('slideTriggers: ', slideTriggers);
-[slideTriggers].forEach((item) => {
+slideTriggers.forEach((item) => {
 	item.addEventListener('click', () => toggleModal(item, true));
 });
 
@@ -77,7 +76,6 @@ function setupVideo(target) {
 	const aspectRatio = countAspectRatio();
 	const videoPath = `${videoName}${aspectRatio}.${videoExt}`;
 
-	console.log('modalWrapper: ', modalWrapper.clientWidth);
 	modalWrapper.innerHTML = `
 	<div class="slide-video-wrapper">
 		<video class="vjs-modal-custom video-js" id="video-js-modal">
@@ -94,9 +92,8 @@ function setupVideo(target) {
 		width: modalWrapper.clientWidth,
 		height: modalWrapper.clientHeight,
 		controls: true,
-		autoplay: false,
+		autoplay: true,
 		preload: 'auto',
-		// fluid: true,
 		controlBar: {
 			pictureInPictureToggle: false,
 		},
