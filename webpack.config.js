@@ -17,7 +17,7 @@ if (process.env.NODE_ENV === 'production') {
 
 module.exports = {
 	mode: 'development',
-	devtool: 'source-map',
+	// devtool: 'source-map',
 	devServer: {
 		historyApiFallback: true,
 		static: path.resolve(__dirname, './build'),
@@ -40,6 +40,7 @@ module.exports = {
 		path: path.resolve(__dirname, 'build'),
 		filename: '[name].bundle.js',
 		assetModuleFilename: 'assets/[name][ext]',
+		chunkFilename: '[id].chunk.js',
 		clean: true,
 	},
 	target,
