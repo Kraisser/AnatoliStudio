@@ -78,7 +78,7 @@ function formReset() {
 
 function showMessage(text) {
 	sendMessageText.innerHTML = text;
-	form.classList.add('form-inactive')
+	form.classList.add('form-inactive');
 	sendMessageWrapper.classList.add('show-message');
 	setTimeout(() => {
 		form.classList.remove('form-inactive');
@@ -106,7 +106,6 @@ form.addEventListener('submit', (e) => {
 
 	if (formValid) {
 		const data = new FormData(form);
-		console.log('data: ', data);
 
 		const request = fetch(fetchURL, {
 			method: 'POST',
