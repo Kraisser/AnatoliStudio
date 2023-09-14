@@ -1,6 +1,14 @@
 @import './common/variables.scss';
 @import './common/mixins.scss';
 
+.footer-email {
+	@include font(18px, 1.1, 400, $defaut-text-color);
+	transition: opacity 0.3s ease;
+
+	&:hover {
+		opacity: 0.7;
+	}
+}
 .footer-wrapper {
 	height: 60px;
 	display: flex;
