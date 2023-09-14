@@ -1,38 +1,11 @@
-// import videojs from 'video.js';
+import loadingSpinner from '../../assets/icons/video-loader.svg';
+
 import {disablePageScroll, enablePageScroll} from 'scroll-lock';
 
 const slideTriggers = document.querySelectorAll('.cases-slide-item');
 const modalOverflow = document.querySelector('.slider-modal-overflow');
 const modalWrapper = document.querySelector('.slider-modal-wrapper');
 const modalCloseIcon = modalOverflow.querySelector('.modal-close-icon');
-const loadingSpinner = `<svg
-						xmlns="http://www.w3.org/2000/svg"
-						xmlns:xlink="http://www.w3.org/1999/xlink"
-						style="margin: auto; background: none; display: block; shape-rendering: auto"
-						width="50px"
-						height="50px"
-						viewBox="0 0 100 100"
-						preserveAspectRatio="xMidYMid"
-					>
-						<circle
-							cx="50"
-							cy="50"
-							fill="none"
-							stroke="#ffffff"
-							stroke-width="8"
-							r="35"
-							stroke-dasharray="164.93361431346415 56.97787143782138"
-						>
-							<animateTransform
-								attributeName="transform"
-								type="rotate"
-								repeatCount="indefinite"
-								dur="1.4s"
-								values="0 50 50;360 50 50"
-								keyTimes="0;1"
-							></animateTransform>
-						</circle>
-					</svg>`;
 
 let activePlayer;
 
@@ -86,22 +59,18 @@ function toggleModal(target, opened) {
 }
 
 function setupVideo(videojsModule, target) {
+	const specAspectRatio = target.dataset.aspectRatio;
 	const fullSrc = target.dataset.videoSrc.split('.');
 	const [videoName, videoExt] = [fullSrc[0], fullSrc[1]];
-	const aspectRatio = countAspectRatio();
-	const videoPath = `${videoName}${aspectRatio}.${videoExt}`;
 
-	modalWrapper.innerHTML = `
-	<div class="slide-video-wrapper">
-		<video class="vjs-modal-custom video-js" id="video-js-modal">
-			<source
-				src="${videoPath}"
-				type="video/mp4"
-			/>
-			<p>Your browser does not support HTML5 video</p>
-		</video>
-	</div>
-	`;
+	if (specAspectRatio) {
+		const videoPath = `${videoName}${specAspectRatio}.${videoExt}`;
+		videoInsert(videoPath);
+	} else {
+		const aspectRatio = countAspectRatio();
+		const videoPath = `${videoName}${aspectRatio}.${videoExt}`;
+		videoInsert(videoPath);
+	}
 
 	const activePlayer = videojsModule('video-js-modal', {
 		width: modalWrapper.clientWidth,
@@ -147,4 +116,18 @@ function countAspectRatio() {
 	} else {
 		return '16x9';
 	}
+}
+
+function videoInsert(videoPath) {
+	modalWrapper.innerHTML = `
+	<div class="slide-video-wrapper">
+		<video class="vjs-modal-custom video-js" id="video-js-modal">
+			<source
+				src="${videoPath}"
+				type="video/mp4"
+			/>
+			<p>Your browser does not support HTML5 video</p>
+		</video>
+	</div>
+	`;
 }
