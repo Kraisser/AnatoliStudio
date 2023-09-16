@@ -1,0 +1,19 @@
+{
+  "icons": [
+    {
+      "src": "auto/icon_512x512.4717071655f6346f267761cc7c0a3b22.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "auto/icon_192x192.6a2d65ee8268ce4629e93e13d7b86652.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "name": "Creative Anatoli Studio",
+  "short_name": "Creative Anatoli Studio",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "."
+}
