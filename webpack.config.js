@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackPwaManifest = require('webpack-pwa-manifest');
 const autoprefixer = require('autoprefixer');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
@@ -111,6 +112,13 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			title: '[title]',
 			template: './src/index.html',
+		}),
+		new WebpackPwaManifest({
+			name: 'Creative Anatoli Studio',
+			icons: [
+				{src: path.resolve('./src/assets/icons/favicon-192x192.png'), sizes: '192x192'},
+				{src: path.resolve('./src/assets/icons/favicon-512x512.png'), sizes: '512x512'},
+			],
 		}),
 	],
 };
