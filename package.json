@@ -21,9 +21,9 @@
 		"css-loader": "^6.7.1",
 		"gh-pages": "^5.0.0",
 		"html-loader": "^3.1.2",
-		"html-webpack-plugin": "^5.5.0",
+		"html-webpack-plugin": "^5.5.3",
 		"mini-css-extract-plugin": "^2.6.1",
-		"node-sass": "^7.0.1",
+		"node-sass": "^9.0.0",
 		"postcss-loader": "^7.0.0",
 		"sass-loader": "^13.0.2",
 		"style-loader": "^3.3.1",
@@ -32,7 +32,7 @@
 		"webpack-bundle-analyzer": "^4.9.1",
 		"webpack-cli": "^4.10.0",
 		"webpack-dev-server": "^4.9.3",
-		"webpack-pwa-manifest": "^4.3.0"
+		"webpack-pwa-manifest": "^4.0.0"
 	},
 	"dependencies": {
 		"@videojs/themes": "^1.0.1",

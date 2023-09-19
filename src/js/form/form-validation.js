@@ -122,5 +122,25 @@ form.addEventListener('submit', (e) => {
 			.catch((error) => {
 				sendAnswerMessage(false, error.code);
 			});
+
+		// try {
+		// 	const requestTestPhp = fetch('./php/mailer/send-example.php', {
+		// 		method: 'POST',
+		// 		body: data,
+		// 		headers: {
+		// 			Accept: 'application/json',
+		// 		},
+		// 	});
+
+		// 	requestTestPhp
+		// 		.then((response) => {
+		// 			console.log(response.ok);
+		// 		})
+		// 		.catch((error) => {
+		// 			console.log(error);
+		// 		});
+		// } catch (error) {
+		// 	console.log(error);
+		// }
 	}
 });

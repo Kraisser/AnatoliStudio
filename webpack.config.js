@@ -104,6 +104,12 @@ module.exports = {
 					to: path.resolve(__dirname, 'build/assets/video'),
 				},
 			],
+			patterns: [
+				{
+					from: path.resolve(__dirname, 'src/php'),
+					to: path.resolve(__dirname, 'build/php'),
+				},
+			],
 		}),
 		// new BundleAnalyzerPlugin(),
 		new MiniCssExtractPlugin({
@@ -116,8 +122,8 @@ module.exports = {
 		new WebpackPwaManifest({
 			name: 'Creative Anatoli Studio',
 			icons: [
-				{src: path.resolve('./src/assets/icons/favicon-192x192.png'), sizes: '192x192'},
-				{src: path.resolve('./src/assets/icons/favicon-512x512.png'), sizes: '512x512'},
+				{src: path.resolve('./src/assets/favicons/favicon-192x192.png'), sizes: '192x192'},
+				{src: path.resolve('./src/assets/favicons/favicon-512x512.png'), sizes: '512x512'},
 			],
 		}),
 	],
