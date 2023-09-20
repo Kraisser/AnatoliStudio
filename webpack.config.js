@@ -110,6 +110,12 @@ module.exports = {
 					to: path.resolve(__dirname, 'build/php'),
 				},
 			],
+			patterns: [
+				{
+					from: path.resolve(__dirname, 'src/assets/favicons/creative-anatoli-studio-share.jpg'),
+					to: path.resolve(__dirname, 'build/assets'),
+				},
+			],
 		}),
 		// new BundleAnalyzerPlugin(),
 		new MiniCssExtractPlugin({
@@ -118,6 +124,9 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			title: '[title]',
 			template: './src/index.html',
+			meta: {
+				'og:image': '/assets/creative-anatoli-studio-share.jpg',
+			},
 		}),
 		new WebpackPwaManifest({
 			name: 'Creative Anatoli Studio',
