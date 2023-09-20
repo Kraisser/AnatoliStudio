@@ -125,7 +125,7 @@ module.exports = {
 			title: '[title]',
 			template: './src/index.html',
 			meta: {
-				'og:image': '/assets/creative-anatoli-studio-share.jpg',
+				'og:image': 'https://creativeanatolistudio.com/assets/creative-anatoli-studio-share.jpg',
 			},
 		}),
 		new WebpackPwaManifest({
