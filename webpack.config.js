@@ -124,9 +124,6 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			title: '[title]',
 			template: './src/index.html',
-			meta: {
-				'og:image': 'https://creativeanatolistudio.com/assets/creative-anatoli-studio-share.jpg',
-			},
 		}),
 		new WebpackPwaManifest({
 			name: 'Creative Anatoli Studio',
