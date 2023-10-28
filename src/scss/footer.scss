@@ -1,6 +1,28 @@
 @import './common/variables.scss';
 @import './common/mixins.scss';
 
+.social-links-wrapper {
+	@include grid(grid-template-columns, auto auto, 30px);
+}
+.social-wrapper {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+
+	a {
+		@include size(40px);
+	}
+	img {
+		transition: all 0.15s ease-in;
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+}
+.footer-email-wrapper {
+	display: grid;
+	align-items: center;
+}
 .footer-email {
 	@include font(18px, 1.1, 400, $defaut-text-color);
 	transition: opacity 0.3s ease;
@@ -19,7 +41,7 @@
 }
 
 // Media
-@media (max-width: 630px) {
+@media (max-width: 850px) {
 	.footer-wrapper {
 		height: auto;
 		flex-direction: column;
@@ -27,8 +49,21 @@
 		padding-bottom: 10px;
 	}
 }
+@media (max-width: 650px) {
+	.social-links-wrapper {
+		grid-template-columns: auto;
+		grid-gap: 15px;
+	}
+	.footer-wrapper {
+		gap: 20px;
+		padding-top: 20px;
+	}
+	.social-wrapper {
+		justify-content: center;
+	}
+}
 @media (max-width: 500px) {
-	.footer-authors {
+	.footer-company-details {
 		text-align: right;
 	}
 }
