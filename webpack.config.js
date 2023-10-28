@@ -100,20 +100,12 @@ module.exports = {
 		new CopyPlugin({
 			patterns: [
 				{
-					from: path.resolve(__dirname, 'src/assets/video'),
-					to: path.resolve(__dirname, 'build/assets/video'),
-				},
-			],
-			patterns: [
-				{
-					from: path.resolve(__dirname, 'src/php'),
-					to: path.resolve(__dirname, 'build/php'),
-				},
-			],
-			patterns: [
-				{
 					from: path.resolve(__dirname, 'src/assets/favicons/creative-anatoli-studio-share.jpg'),
 					to: path.resolve(__dirname, 'build/assets'),
+				},
+				{
+					from: path.resolve(__dirname, 'src/assets/video'),
+					to: path.resolve(__dirname, 'build/assets/video'),
 				},
 			],
 		}),
